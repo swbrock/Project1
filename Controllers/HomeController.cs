@@ -15,7 +15,7 @@ namespace Project1.Controllers
         {
             return View();
         }
-        public IActionResult ViewTasks()
+        public IActionResult Quadrants()
         {
             return View();
         }
