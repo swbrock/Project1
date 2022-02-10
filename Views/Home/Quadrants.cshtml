@@ -2,6 +2,7 @@
     ViewData["Title"] = "View Tasks";
 
 }
+@model List<TaskEntry>
 
 <h1>All Tasks</h1>
 
@@ -23,16 +24,24 @@
     </div>
     <div class="tl">
         <ul>
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 1)
+                {
+                    <li>@x.Task</li>
+                }
+            }
         </ul>
     </div>
     <div class="tr">
         <ul>
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 2)
+                {
+                    <li>@x.Task</li>
+                }
+            }
         </ul>
     </div>
 </div>
@@ -43,22 +52,24 @@
     </div>
     <div class="bl">
         <ul>
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 3)
+                {
+                    <li>@x.Task</li>
+                }
+            }
         </ul>
     </div>
     <div class="br">
         <ul>
-            <li>Coffee</li>
-            <li>Tea</li>
-            <li>Milk</li>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 4)
+                {
+                    <li>@x.Task</li>
+                }
+            }
         </ul>
     </div>
 </div>
