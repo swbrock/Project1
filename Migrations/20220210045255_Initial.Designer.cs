@@ -8,7 +8,7 @@ using Project1.Models;
 namespace Project1.Migrations
 {
     [DbContext(typeof(TasksContext))]
-    [Migration("20220208001232_Initial")]
+    [Migration("20220210045255_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,8 +69,7 @@ namespace Project1.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quadrant")
-                        .HasColumnType("INTEGER")
-                        .HasMaxLength(4);
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Task")
                         .IsRequired()

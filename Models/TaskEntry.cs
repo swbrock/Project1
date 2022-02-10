@@ -21,7 +21,6 @@ namespace Project1.Models
         public string DueDate { get; set; }
 
         [Required(ErrorMessage = "Quadrant is required!")]
-        [MaxLength(4)]
         public int Quadrant { get; set; }
 
         public int CategoryId { get; set; }

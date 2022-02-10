@@ -27,7 +27,7 @@ namespace Project1.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Task = table.Column<string>(nullable: false),
                     DueDate = table.Column<string>(nullable: true),
-                    Quadrant = table.Column<int>(maxLength: 4, nullable: false),
+                    Quadrant = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false),
                     Completed = table.Column<bool>(nullable: false)
                 },

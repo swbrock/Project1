@@ -67,8 +67,7 @@ namespace Project1.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Quadrant")
-                        .HasColumnType("INTEGER")
-                        .HasMaxLength(4);
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Task")
                         .IsRequired()
