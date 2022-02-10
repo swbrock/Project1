@@ -1,5 +1,79 @@
 ﻿@{
     ViewData["Title"] = "View Tasks";
-}
 
-<h1>This is where we will view the tasks</h1>
+}
+@model List<TaskEntry>
+
+<h1>All Tasks</h1>
+
+
+<div class="headerRow">
+
+    <div class="quadTopHeader">
+        Urgent
+    </div>
+    <div class="quadTopHeader">
+        Non-Urgent
+    </div>
+</div>
+<div class="row"></div>
+
+<div class="row">
+    <div class="quadSideHeader">
+        Important
+    </div>
+    <div class="tl">
+        @foreach (var x in Model)
+        {
+            @if (x.Quadrant == 1)
+            {
+                <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+            }
+        }
+    </div>
+    <div class="tr">
+        <ul>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 2)
+                {
+                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="quadSideHeader">
+        Not Important
+    </div>
+    <div class="bl">
+        <ul>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 3)
+                {
+                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="br">
+        <ul>
+            @foreach (var x in Model)
+            {
+                @if (x.Quadrant == 4)
+                {
+                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
