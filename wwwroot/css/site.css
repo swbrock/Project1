@@ -3,9 +3,16 @@ for details on configuring this project to bundle and minify static web assets. 
 
 
 /*Quadrants CSS*/
+
+
+.row {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width:100%;
+}
+
 .quadTopHeader {
-    border: 5px solid black;
-    border-radius: 8px;
     width: 49%;
     padding: 0;
     margin: 0;
@@ -23,30 +30,41 @@ for details on configuring this project to bundle and minify static web assets. 
 }
 
 .quadSideHeader {
-    border: 5px solid black;
-    border-radius: 8px;
-    width: 100px;
+    width: 10%;
+    margin: 0;
+    font-size: large;
+    text-align: center;
+    vertical-align:central;
+}
+
+
+.tl {
+    background-color: palevioletred;
+    width: 45%;
     padding: 10px;
-    margin: 0;
-    height: 49%;
+    padding-top: 20px;
 }
 
-.row {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
-
-.quad {
-    border: 5px solid black;
-    border-radius: 8px;
-    width: 44%;
+.tr {
+    background-color: lightgoldenrodyellow;
+    width: 45%;
     padding: 10px;
-    margin: 0;
-    height: 49%;
-    float: left;
+    padding-top: 20px;
 }
 
+.bl {
+    background-color: palegreen;
+    width: 45%;
+    padding: 10px;
+    padding-top:20px;
+}
+
+.br {
+    background-color: paleturquoise;
+    width: 45%;
+    padding: 10px;
+    padding-top: 20px;
+}
 
 
 a.navbar-brand {
