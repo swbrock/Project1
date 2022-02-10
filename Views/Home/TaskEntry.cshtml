@@ -24,7 +24,7 @@
         </select><br />
 
         <label asp-for="CategoryId">Category: </label>
-        <select asp-for="CategoryId" name="category" required>
+        <select asp-for="CategoryId">
             <option value="">Select</option>
             @foreach (Category c in ViewBag.Categories)
             {
@@ -40,6 +40,7 @@
         </select><br /><br /><br />
 
         <button type="submit">Submit</button>
+        <div asp-validation-summary="All"></div>
 
     </form>
 </div>

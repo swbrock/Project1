@@ -23,15 +23,13 @@
         Important
     </div>
     <div class="tl">
-            @foreach (var x in Model)
+        @foreach (var x in Model)
+        {
+            @if (x.Quadrant == 1)
             {
-                @if (x.Quadrant == 1)
-                {
-                <p>@x.TaskId</p>
-                <p><a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.TaskId">Edit</a></p>
-                <p><a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.TaskId">Delete</a></p>
-                }
+                <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
             }
+        }
     </div>
     <div class="tr">
         <ul>
@@ -39,7 +37,7 @@
             {
                 @if (x.Quadrant == 2)
                 {
-                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-applicationid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-applicationid="@x.TaskId">Delete</a></li>
+                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
                 }
             }
         </ul>
@@ -56,7 +54,7 @@
             {
                 @if (x.Quadrant == 3)
                 {
-                    <li>@x.Task</li>
+                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
                 }
             }
         </ul>
@@ -67,7 +65,7 @@
             {
                 @if (x.Quadrant == 4)
                 {
-                    <li>@x.Task</li>
+                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
                 }
             }
         </ul>

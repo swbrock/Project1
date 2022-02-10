@@ -13,10 +13,10 @@ namespace Project1.Models
         {
             //leave blank
         }
-
+        public DbSet<Category> Categories { get; set; }
         public DbSet<TaskEntry> Tasks { get; set; }
 
-        public DbSet<Category> Categories { get; set; }
+        
 
         //Seed data
         protected override void OnModelCreating(ModelBuilder mb)

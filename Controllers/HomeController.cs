@@ -33,9 +33,10 @@ namespace Project1.Controllers
         {
             if (ModelState.IsValid)
             {
-                TcContext.Add(te);
+                ViewBag.Categories = TcContext.Categories.ToList();
+                TcContext.Tasks.Add(te);
                 TcContext.SaveChanges();
-                return View("Index", te);
+                return RedirectToAction("Quadrants");
             }
             else
             {
@@ -55,7 +56,7 @@ namespace Project1.Controllers
         {
             ViewBag.Categories = TcContext.Categories.ToList();
 
-            var tasks = TcContext.Tasks.Single(x => x.TaskId == taskid);
+            var tasks = TcContext.Tasks.SingleOrDefault(x => x.TaskId == taskid);
             return View("TaskEntry", tasks);
         }
         [HttpPost]
@@ -70,7 +71,7 @@ namespace Project1.Controllers
         [HttpGet]
         public IActionResult Delete (int taskid)
         {
-            var task = TcContext.Tasks.Single(x => x.TaskId == taskid);
+            var task = TcContext.Tasks.SingleOrDefault(x => x.TaskId == taskid);
             return View(task);
         }
         [HttpPost]
