@@ -65,6 +65,8 @@ namespace Project1.Controllers
             TcContext.SaveChanges();
             return RedirectToAction("Quadrants");
         }
+
+        //delete functions
         [HttpGet]
         public IActionResult Delete (int taskid)
         {
