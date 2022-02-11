@@ -27,7 +27,10 @@
         {
             @if (x.Quadrant == 1)
             {
-                <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                @if (x.Completed == false)
+                {
+                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                }
             }
         }
     </div>
@@ -37,8 +40,11 @@
             {
                 @if (x.Quadrant == 2)
                 {
-                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
-                }
+                    @if (x.Completed == false)
+                    {
+                        <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                    }
+                 }
             }
         </ul>
     </div>
@@ -54,7 +60,10 @@
             {
                 @if (x.Quadrant == 3)
                 {
-                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                    @if (x.Completed == false)
+                    {
+                        <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                    }
                 }
             }
         </ul>
@@ -65,7 +74,10 @@
             {
                 @if (x.Quadrant == 4)
                 {
-                    <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                    @if (x.Completed == false)
+                    {
+                        <li>@x.Task <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a> <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a></li>
+                    }
                 }
             }
         </ul>
